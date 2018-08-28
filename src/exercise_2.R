@@ -35,7 +35,7 @@ raw$boat[is.na(raw$boat)] <- "None"
 
 # Create a new column has_cabin_number which has 1 if there is a cabin number,
 # and 0 otherwise.
-raw <- raw %>% 
+titanic_clean <- raw %>% 
   mutate(has_cabin_number = ifelse(is.na(cabin), 0, 1))
 
-str(raw)
+write.csv(titanic_clean, "./data/titanic_clean.csv")
